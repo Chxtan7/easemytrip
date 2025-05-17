@@ -1,0 +1,15 @@
+footer {
+  background: #212529;
+}
+footer h3, footer h5 {
+  color: #fff;
+}
+footer a.text-secondary:hover {
+  color: #fff !important;
+}
+footer .form-control {
+  border-radius: 0.5rem;
+}
+footer .btn {
+  border-radius: 0.5rem;
+}

@@ -1,0 +1,11 @@
+<div class="card h-100 border-0 shadow offer-card position-relative overflow-hidden">
+  <img [src]="offer.imageUrl" [alt]="offer.title" class="card-img offer-img position-absolute w-100 h-100 object-fit-cover" />
+  <div class="card-img-overlay d-flex flex-column justify-content-between p-3 bg-dark bg-opacity-50">
+    <div>
+      <span class="badge bg-primary mb-2">{{ offer.discount }}</span>
+      <h5 class="card-title text-white fw-bold">{{ offer.title }}</h5>
+      <p class="card-text text-white-50 small">{{ offer.description }}</p>
+    </div>
+    <a [routerLink]="offer.link" class="btn btn-outline-light btn-sm align-self-start mt-2">Book Now</a>
+  </div>
+</div>

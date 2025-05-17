@@ -1,0 +1,51 @@
+<div class="login-hero-bg d-flex align-items-center justify-content-center flex-wrap">
+  <div class="login-hero-text animate__animated animate__fadeInLeft">
+    <h1 class="display-5 fw-bold mb-3">Welcome Back!</h1>
+    <p class="lead mb-4">Sign in to unlock exclusive travel deals, manage your bookings, and explore the world with ease.</p>
+    <div class="animated-plane-container animate__animated animate__fadeIn animate__delay-1s">
+      <div class="animated-cloud cloud-1"></div>
+      <div class="animated-cloud cloud-2"></div>
+      <div class="animated-plane">
+        <svg width="120" height="60" viewBox="0 0 120 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g>
+            <rect x="10" y="25" width="80" height="10" rx="5" fill="#0d6efd"/>
+            <polygon points="90,30 110,20 110,40" fill="#38bdf8"/>
+            <rect x="15" y="28" width="10" height="4" rx="2" fill="#fff"/>
+            <rect x="30" y="28" width="10" height="4" rx="2" fill="#fff"/>
+            <rect x="45" y="28" width="10" height="4" rx="2" fill="#fff"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+  <div class="login-card animate__animated animate__fadeInUp animate__delay-1s">
+    <h2 class="title">Login</h2>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label>Email</label>
+        <input formControlName="email" type="email" placeholder="Enter your email" />
+        <div *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched" class="error">
+          Valid email is required.
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <div class="input-group">
+          <input formControlName="password" [type]="hidePassword ? 'password' : 'text'" placeholder="Enter your password" />
+          <button type="button" (click)="hidePassword = !hidePassword" class="toggle-password input-group-text">
+            <span [ngClass]="hidePassword ? 'bi-eye' : 'bi-eye-slash'"></span>
+          </button>
+        </div>
+        <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="error">
+          Password is required.
+        </div>
+      </div>
+      <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+      <button type="submit" class="login-btn animate__animated animate__pulse animate__infinite" [disabled]="loginForm.invalid">Login</button>
+    </form>
+    <div class="text-center mt-3 animate__animated animate__fadeIn animate__delay-2s">
+      <span>Don't have an account?</span>
+      <a routerLink="/signup" class="text-primary fw-bold ms-1">Sign Up</a>
+    </div>
+  </div>
+</div>

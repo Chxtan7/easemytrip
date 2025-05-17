@@ -1,0 +1,76 @@
+<div class="card shadow-lg p-4 mb-4 bg-white border-0 rounded-4">
+  <ul class="nav nav-tabs mb-3" id="searchTabs" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="flights-tab" data-bs-toggle="tab" data-bs-target="#flights" type="button" role="tab" aria-controls="flights" aria-selected="true">Flights</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="hotels-tab" data-bs-toggle="tab" data-bs-target="#hotels" type="button" role="tab" aria-controls="hotels" aria-selected="false">Hotels</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="packages-tab" data-bs-toggle="tab" data-bs-target="#packages" type="button" role="tab" aria-controls="packages" aria-selected="false">Packages</button>
+    </li>
+  </ul>
+  <div class="tab-content" id="searchTabsContent">
+    <div class="tab-pane fade show active" id="flights" role="tabpanel" aria-labelledby="flights-tab">
+      <form class="row g-3 align-items-end" (ngSubmit)="searchFlights()">
+        <div class="col-md-3">
+          <label class="form-label">From</label>
+          <input type="text" class="form-control" placeholder="Enter city or airport" [(ngModel)]="flightSearch.from" name="flightFrom">
+        </div>
+        <div class="col-md-3">
+          <label class="form-label">To</label>
+          <input type="text" class="form-control" placeholder="Enter city or airport" [(ngModel)]="flightSearch.to" name="flightTo">
+        </div>
+        <div class="col-md-2">
+          <label class="form-label">Departure</label>
+          <input type="date" class="form-control" [(ngModel)]="flightSearch.departure" name="flightDeparture">
+        </div>
+        <div class="col-md-2">
+          <label class="form-label">Return</label>
+          <input type="date" class="form-control" [(ngModel)]="flightSearch.return" name="flightReturn">
+        </div>
+        <div class="col-md-2 d-grid">
+          <button type="submit" class="btn btn-primary">Search Flights</button>
+        </div>
+      </form>
+    </div>
+    <div class="tab-pane fade" id="hotels" role="tabpanel" aria-labelledby="hotels-tab">
+      <form class="row g-3 align-items-end" (ngSubmit)="searchHotels()">
+        <div class="col-md-4">
+          <label class="form-label">City</label>
+          <input type="text" class="form-control" placeholder="Where are you going?" [(ngModel)]="hotelSearch.city" name="hotelCity">
+        </div>
+        <div class="col-md-3">
+          <label class="form-label">Check-in</label>
+          <input type="date" class="form-control" [(ngModel)]="hotelSearch.checkin" name="hotelCheckin">
+        </div>
+        <div class="col-md-3">
+          <label class="form-label">Check-out</label>
+          <input type="date" class="form-control" [(ngModel)]="hotelSearch.checkout" name="hotelCheckout">
+        </div>
+        <div class="col-md-2 d-grid">
+          <button type="submit" class="btn btn-primary">Search Hotels</button>
+        </div>
+      </form>
+    </div>
+    <div class="tab-pane fade" id="packages" role="tabpanel" aria-labelledby="packages-tab">
+      <form class="row g-3 align-items-end" (ngSubmit)="searchPackages()">
+        <div class="col-md-3">
+          <label class="form-label">From</label>
+          <input type="text" class="form-control" placeholder="Enter your city" [(ngModel)]="packageSearch.from" name="packageFrom">
+        </div>
+        <div class="col-md-3">
+          <label class="form-label">To</label>
+          <input type="text" class="form-control" placeholder="Where to?" [(ngModel)]="packageSearch.to" name="packageTo">
+        </div>
+        <div class="col-md-3">
+          <label class="form-label">Departure</label>
+          <input type="date" class="form-control" [(ngModel)]="packageSearch.departure" name="packageDeparture">
+        </div>
+        <div class="col-md-3 d-grid">
+          <button type="submit" class="btn btn-primary">Search Packages</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

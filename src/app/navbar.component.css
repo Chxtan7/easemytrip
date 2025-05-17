@@ -1,0 +1,11 @@
+.navbar {
+  font-size: 1.1rem;
+}
+.navbar-brand {
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+.nav-link.active, .nav-link:focus, .nav-link:hover {
+  color: #0d6efd !important;
+  font-weight: 500;
+}

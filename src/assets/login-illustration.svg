@@ -1,0 +1,13 @@
+<!-- Free illustration from unDraw (https://undraw.co/illustrations) -->
+<svg width="320" height="240" viewBox="0 0 320 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="320" height="240" rx="24" fill="#e0e7ff"/>
+  <path d="M80 180c0-44 36-80 80-80s80 36 80 80" fill="#fff"/>
+  <ellipse cx="160" cy="180" rx="72" ry="16" fill="#c7d2fe"/>
+  <rect x="120" y="100" width="80" height="60" rx="12" fill="#60a5fa"/>
+  <rect x="140" y="120" width="40" height="20" rx="4" fill="#fff"/>
+  <rect x="150" y="130" width="20" height="10" rx="2" fill="#60a5fa"/>
+  <circle cx="160" cy="120" r="6" fill="#2563eb"/>
+  <rect x="170" y="110" width="10" height="10" rx="2" fill="#2563eb"/>
+  <rect x="140" y="110" width="10" height="10" rx="2" fill="#2563eb"/>
+  <rect x="160" y="140" width="8" height="8" rx="2" fill="#2563eb"/>
+</svg>

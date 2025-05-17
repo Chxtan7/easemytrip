@@ -1,0 +1,87 @@
+<div class="d-flex flex-column min-vh-100 bg-light">
+  <app-navbar></app-navbar>
+  <app-home-hero [goToLogin]="goToLogin" [goToSignup]="goToSignup"></app-home-hero>
+
+  <!-- SearchBar -->
+  <section class="w-100 d-flex justify-content-center position-relative" style="margin-top: -3rem; z-index: 20;">
+    <div class="bg-white rounded shadow p-4 w-100" style="max-width: 900px;">
+      <app-search-bar></app-search-bar>
+    </div>
+  </section>
+
+  <!-- Offers Section -->
+  <section class="container py-5">
+    <h2 class="h2 fw-bold mb-2 text-dark">Special Offers</h2>
+    <p class="text-secondary mb-4">Incredible deals for your next adventure</p>
+    <div class="row g-4">
+      <div class="col-12 col-md-6 col-lg-4" *ngFor="let offer of offers">
+        <app-offer-card [offer]="offer"></app-offer-card>
+      </div>
+    </div>
+  </section>
+
+  <!-- Popular Destinations -->
+  <section class="container py-5">
+    <h2 class="h2 fw-bold mb-2 text-dark">Popular Destinations</h2>
+    <p class="text-secondary mb-4">Explore our most sought-after vacation spots</p>
+    <div class="row g-4">
+      <div class="col-12 col-sm-6 col-lg-3" *ngFor="let destination of destinations">
+        <app-destination-card [destination]="destination"></app-destination-card>
+      </div>
+    </div>
+    <div class="mt-4 text-center">
+      <button class="btn btn-outline-primary px-4 py-2 fw-semibold" (click)="viewAllDestinations()">View All Destinations</button>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="bg-white py-5 border-top">
+    <div class="container">
+      <h2 class="h2 fw-bold text-center mb-5 text-dark">Why Book with TripEase</h2>
+      <div class="row g-4 justify-content-center">
+        <div class="col-12 col-md-4">
+          <div class="bg-primary bg-opacity-10 p-4 rounded shadow text-center h-100 d-flex flex-column align-items-center">
+            <span class="material-icons text-primary fs-1 mb-3">star</span>
+            <h3 class="h5 fw-semibold mb-2">Best Value Deals</h3>
+            <p class="text-secondary">Find the best deals across flights, hotels, and vacation packages.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="bg-primary bg-opacity-10 p-4 rounded shadow text-center h-100 d-flex flex-column align-items-center">
+            <span class="material-icons text-primary fs-1 mb-3">verified_user</span>
+            <h3 class="h5 fw-semibold mb-2">Secure Booking</h3>
+            <p class="text-secondary">Your security is our priority with industry-standard encryption for all transactions.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="bg-primary bg-opacity-10 p-4 rounded shadow text-center h-100 d-flex flex-column align-items-center">
+            <span class="material-icons text-primary fs-1 mb-3">headset_mic</span>
+            <h3 class="h5 fw-semibold mb-2">24/7 Support</h3>
+            <p class="text-secondary">Our customer support team is available around the clock to assist you.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Section -->
+  <section class="container py-5">
+    <div class="bg-primary bg-opacity-10 rounded p-4 p-md-5 shadow">
+      <div class="mx-auto text-center" style="max-width: 600px;">
+        <h2 class="h4 h-md-2 fw-bold mb-3 text-dark">Subscribe to Our Newsletter</h2>
+        <p class="text-secondary mb-4">Stay updated with the latest travel deals and offers</p>
+        <form class="row g-2 justify-content-center align-items-center" (ngSubmit)="subscribeNewsletter(newsletterEmail.value)" autocomplete="off">
+          <div class="col-12 col-sm-8">
+            <input #newsletterEmail type="email" placeholder="Your email address" class="form-control form-control-lg" required />
+          </div>
+          <div class="col-12 col-sm-4">
+            <button type="submit" class="btn btn-primary btn-lg w-100 fw-semibold">Subscribe</button>
+          </div>
+        </form>
+        <app-alert *ngIf="newsletterSuccess" [type]="'success'" title="Subscribed!" [description]="newsletterSuccess"></app-alert>
+        <app-alert *ngIf="newsletterError" [type]="'danger'" title="Error" [description]="newsletterError"></app-alert>
+      </div>
+    </div>
+  </section>
+  <app-footer></app-footer>
+</div>
